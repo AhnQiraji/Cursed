@@ -1,0 +1,25 @@
+@import '../../../styles/vars';
+
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-color: $darker-color;
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: $font-color;
+
+        >* {
+            font-size: 4em;
+
+            &.large {
+                font-size: 8em;
+            }
+        }
+    }
+}
