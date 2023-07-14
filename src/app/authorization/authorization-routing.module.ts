@@ -5,12 +5,12 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 
 export const AuthorizationRoutes: Routes = [
+  { path: '', redirectTo: '/login', pathMatch:'full'},
   { path: 'login', component: LoginComponent},
   { path: 'registration', component: RegistrationComponent},
 ]
 
 @NgModule({
-  imports: [RouterModule.forRoot(AuthorizationRoutes)],
   exports: [RouterModule]
 })
 export class AuthorizationRoutingModule {}

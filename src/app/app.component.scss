@@ -1,0 +1,33 @@
+@import '../styles/vars';
+
+:host {
+
+  ::ng-deep {
+
+    input[type=radio], input[type=checkbox], button {
+        cursor: pointer;
+    }
+
+
+
+    input:not([type=radio]):not([type=checkbox]){
+      min-width: 16rem;
+      border: none;
+      outline: none;
+      box-shadow: rgb(0 0 0 / 30%) 0 0 8px;
+      border-radius: $small-offset;
+      padding: 0.25 * $default-offset 0.5 * $default-offset;
+    }
+
+    button {
+      border-radius: $small-offset;
+      padding: 0.25 * $default-offset 0.5 * $default-offset;
+      transition: all 0.3s;
+    }
+
+
+
+
+
+  }
+}
