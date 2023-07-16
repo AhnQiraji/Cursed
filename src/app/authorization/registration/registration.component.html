@@ -1,1 +1,9 @@
+<form [formGroup]="registrationForm" novalidate >
+    <input formControlName="userName" placeholder="Username">
+    <input formControlName="email" type="email" placeholder="Email">
+    <input formControlName="password" type="password" placeholder="Password">
+    <input formControlName="confirmPassword" type="password" placeholder="Repeat Password">
+    <button type="submit">Sign up</button>
+</form>
+<hr>
 <a routerLink="../login">Already have an account? Log in.</a>

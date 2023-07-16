@@ -1,18 +1,8 @@
 @import '../../../styles/vars';
 
-form {
-    display: flex;
-    flex-direction: column;
-    row-gap: $default-offset;
-}
-
 
 p {
     display: flex;
     justify-content: space-between;
     font-size: $small-font-size;
-}
-
-input.ng-touched.ng-invalid{
-    border-color: $bad-color;
 }
