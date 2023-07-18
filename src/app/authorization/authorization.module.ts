@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpService } from '../assets/services/http.service';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     AuthorizationRoutingModule,
     SharedModule,
     ReactiveFormsModule,
-  ]
+    HttpClientModule,
+  ],
+  providers: [HttpService]
 })
 export class AuthorizationModule { }
