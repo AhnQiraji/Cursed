@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { User } from 'src/app/entities/classes';
 import { UserService } from 'src/app/services/user.service';
 
 @Component({
@@ -7,9 +9,8 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  constructor(private userService: UserService) {
+  @Input() user: User;
 
+  constructor(private userService: UserService) {
   }
-  userName = this.userService.user?.name;
-  userLogo = `assets/avatars/${this.userService.user?.avatar}.png`;
 }

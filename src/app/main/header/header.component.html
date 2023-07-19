@@ -3,6 +3,6 @@
   <span>TaskMaster</span>
 </div>
 <div class="user" id="user">
-  <span class="userName">{{ userName }}</span>
-  <div class="userLogo"><img [src]="userLogo" alt=""></div>
+  <span class="userName">{{user.name}}</span>
+  <div class="userLogo"><img [src]="'assets/avatars/' + user.avatar + '.png'" alt=""></div>
 </div>

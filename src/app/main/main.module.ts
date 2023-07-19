@@ -3,9 +3,10 @@ import { CommonModule } from '@angular/common';
 
 import { MainComponent } from './main.component';
 import { TableComponent } from './table/table.component';
-import { MainRoutingModule } from './main--routing.module';
+import { MainRoutingModule } from './main-routing.module';
 import { SharedModule } from '../shared/shared.module';
 import { HeaderComponent } from './header/header.component';
+import { HeaderContainer } from './header/header.container';
 
 
 
@@ -13,7 +14,8 @@ import { HeaderComponent } from './header/header.component';
   declarations: [
     MainComponent,
     TableComponent,
-    HeaderComponent
+    HeaderComponent,
+    HeaderContainer,
   ],
   imports: [
     CommonModule,

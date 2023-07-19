@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { HttpService } from '../../services/http.service';
 import { User } from 'src/app/entities/classes';
@@ -28,15 +28,18 @@ export class LoginComponent {
       alert('Invalid data');
       // popUp
     } else if (this.loginForm.status === "VALID") {
-      this.httpService.login(email, password).subscribe({
+      let loginSubscription = this.httpService.login(email, password).subscribe({
         next: (data: User | string) => {
           console.dir(data);
           if (typeof(data) === 'string') {
             alert(data);
           } else {
             this.userService.user = data;
-            this.router.navigate(['main'])
+            localStorage.setItem("userEmail", `${data.name}`);
+            localStorage.setItem("userPassword", `${data.password}`);
+            this.router.navigate(['main']);
           }
+          loginSubscription.unsubscribe();
         }
       });
     }

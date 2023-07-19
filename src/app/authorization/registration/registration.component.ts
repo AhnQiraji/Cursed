@@ -44,7 +44,9 @@ export class RegistrationComponent {
     } else if (this.registrationForm?.status === "VALID") {
       this.httpService.registration(name, email, password).subscribe({
         next: (data: User | string) => {
-          console.log(data);
+          alert('New account registered! Log in to start.');
+          // popUp
+          this.registrationForm.reset();
         }
       });
     } else {
