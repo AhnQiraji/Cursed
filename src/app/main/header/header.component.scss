@@ -1,0 +1,68 @@
+@import '../../../styles/vars';
+
+:host {
+  height: 4 * $default-offset;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid $darkest-color;
+  padding: 0.5 * $default-offset 2 * $default-offset;
+  background-color: $dark-color;
+
+  .logo {
+    display: flex;
+    align-items: center;
+    font-size: 2em;
+    column-gap: 0.5 * $default-offset;
+    // color: $light-bg-color;
+
+    .mainLogo {
+      width: 3 * $default-offset;
+      height: 100%;
+      filter: invert(1);
+    }
+  }
+
+  .user {
+    display: flex;
+    align-items: center;
+    padding: 0 0.25 * $default-offset 0 0.5 * $default-offset;
+    border-radius: $default-offset;
+
+    &:hover {
+      background-color: $darker-color;
+      cursor: pointer;
+    }
+
+    .userName {
+      padding: 0.25 * $default-offset;
+      color: $lighter-color;
+    }
+
+    .userLogo {
+      height: 100%;
+      padding: 0.25 * $default-offset;
+      border-radius: 50%;
+      transition: all 0.3s linear;
+        
+      img {
+        width: 2.5 * $default-offset;
+        height: 100%;
+      }
+    }
+      
+    // svg {
+    //   width: $square-elemets-width;
+    //   height: 100%;
+    //   padding: 0;
+    //   border-radius: 50%;
+
+    //   path {
+    //     fill: $secondary-bg-color;
+    //   }
+
+    //   &:hover {
+    //     background-color: inherit;
+    //   }
+    // }
+  }
+}

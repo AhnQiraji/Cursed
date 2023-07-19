@@ -1,7 +1,9 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { HttpService } from '../../assets/services/http.service';
-import { User } from 'src/app/assets/entities/classes';
+import { HttpService } from '../../services/http.service';
+import { User } from 'src/app/entities/classes';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-login',
@@ -9,10 +11,10 @@ import { User } from 'src/app/assets/entities/classes';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-  user: any = 0;
   public loginForm: FormGroup;
+  private loginData: User | string = '';
 
-  constructor(private httpService: HttpService) {
+  constructor(private httpService: HttpService, private router: Router, private userService: UserService) {
     this.loginForm = new FormGroup({
       email: new FormControl('e@mail.ru', [Validators.required, Validators.email, Validators.pattern('^[[a-zA-Zа-яА-Я0-9]+@[a-zA-Zа-яА-Я0-9]*mail.[a-zA-Zа-яА-Я0-9]+')]),
       password: new FormControl('1234', [Validators.required, Validators.pattern('^[a-zA-Zа-яА-Я0-9]{4,20}$')]),
@@ -26,14 +28,15 @@ export class LoginComponent {
       alert('Invalid data');
       // popUp
     } else if (this.loginForm.status === "VALID") {
-      this.httpService.getUser(email, password).subscribe({
+      this.httpService.login(email, password).subscribe({
         next: (data: User | string) => {
+          console.dir(data);
           if (typeof(data) === 'string') {
             alert(data);
-            // popUp
+          } else {
+            this.userService.user = data;
+            this.router.navigate(['main'])
           }
-          this.user = data;
-          console.dir(data)
         }
       });
     }

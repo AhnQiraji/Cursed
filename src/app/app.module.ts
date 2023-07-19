@@ -5,7 +5,9 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AuthorizationModule } from './authorization/authorization.module';
 import { SharedModule } from './shared/shared.module';
-import { HttpService } from './assets/services/http.service';
+import { HttpService } from './services/http.service';
+import { MainModule } from './main/main.module';
+import { UserService } from './services/user.service';
 
 
 @NgModule({
@@ -17,8 +19,11 @@ import { HttpService } from './assets/services/http.service';
     AppRoutingModule,
     AuthorizationModule,
     SharedModule,
+    MainModule
   ],
-  providers: [HttpService],
+  providers: [HttpService,
+  UserService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {}
