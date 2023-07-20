@@ -30,7 +30,6 @@ export class LoginComponent {
     } else if (this.loginForm.status === "VALID") {
       let loginSubscription = this.httpService.login(email, password).subscribe({
         next: (data: User | string) => {
-          console.dir(data);
           if (typeof(data) === 'string') {
             alert(data);
           } else {

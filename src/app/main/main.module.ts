@@ -10,10 +10,10 @@ import { HeaderContainer } from './header/header.container';
 import { ProfileComponent } from './header/profile/profile.component';
 import { ProfileContainer } from './header/profile/profile.container';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ToolbarComponent } from '../shared/toolbar/toolbar.component';
 import { TaskTableComponent } from './table/task-table/task-table.component';
 import { TaskTableContainer } from './table/task-table/task-table.container';
 import { TaskCreationComponent } from './table/task-table/task-creation/task-creation.component';
+import { TaskComponent } from './table/task-table/task/task.component';
 
 
 
@@ -27,7 +27,8 @@ import { TaskCreationComponent } from './table/task-table/task-creation/task-cre
     ProfileContainer,
     TaskTableComponent,
     TaskTableContainer,
-    TaskCreationComponent
+    TaskCreationComponent,
+    TaskComponent,
   ],
   imports: [
     CommonModule,

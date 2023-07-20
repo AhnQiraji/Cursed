@@ -65,4 +65,20 @@ export class HttpService{
       })
     );
   }
+
+  
+
+  getTasks() : any {
+    // let taskList: any[] | null = null;
+    return this.http.get('http://localhost:3000/getTask/').pipe(
+      map((result:any) => {
+        if (result.error) {
+          return result.error;
+        }
+        return result;
+      })
+    )
+    // console.log('getTasks returns: ', taskList);
+    // return taskList;
+  }
 }

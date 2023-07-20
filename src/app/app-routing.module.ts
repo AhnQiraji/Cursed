@@ -10,7 +10,7 @@ import { MainGuard } from './guards';
 
 const routes: Routes = [
   { path: '', component: AuthorizationComponent, children: AuthorizationRoutes},
-  { path: 'main', component: MainComponent, children: MainRoutes, canActivate: [MainGuard]},
+  { path: 'main', component: MainComponent, canActivate: [MainGuard]},
   { path: '**', component: ErrorNotFoundComponent}
 ];
 

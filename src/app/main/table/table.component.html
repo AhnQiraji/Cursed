@@ -1,10 +1,9 @@
 <toolbar></toolbar>
 <div class="taskBoard" id="taskBoard">
 
-  <task-table-container *ngFor="let table of tables" [id]="table">
+  <task-table-container *ngFor="let table of tables" [id]="table" [list]="taskList">
     {{ table }}
   </task-table-container>
-
   
 
 </div>
