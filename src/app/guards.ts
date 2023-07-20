@@ -29,7 +29,7 @@ class PermissionsService {
             this.router.navigate(['/login']);
           } else {
             this.userService.user = data;
-            localStorage.setItem("userEmail", `${data.name}`);
+            localStorage.setItem("userEmail", `${data.email}`);
             localStorage.setItem("userPassword", `${data.password}`);
           }
           loginSubscription.unsubscribe();

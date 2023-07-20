@@ -2,7 +2,12 @@
   <img src="assets/png/mainLogo.png" class="mainLogo">
   <span>TaskMaster</span>
 </div>
-<div class="user" id="user">
+<div class="user" (click)="userOptions = !userOptions">
   <span class="userName">{{user.name}}</span>
   <div class="userLogo"><img [src]="'assets/avatars/' + user.avatar + '.png'" alt=""></div>
+</div>
+
+<div class="userOptions" [style.display]="userOptions ? 'flex' : 'none'">
+  <div (click)="profile()">Profile</div>
+  <div (click)="logOut()">Log out</div>
 </div>

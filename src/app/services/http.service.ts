@@ -18,8 +18,8 @@ export class HttpService{
         if (user.error) {
           return user.error;
         }
-        console.log(user)
-        return new User(user.email, user.name, user.password, user.id, user.avatar);
+        // console.log(user)
+        return new User(user.name, user.email, user.password, user.id, user.avatar);
       })
     )
   };

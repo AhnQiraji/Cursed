@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Router } from '@angular/router';
 import { User } from 'src/app/entities/classes';
 import { UserService } from 'src/app/services/user.service';
 
@@ -10,7 +10,19 @@ import { UserService } from 'src/app/services/user.service';
 })
 export class HeaderComponent {
   @Input() user: User;
+  
+  public userOptions = false;
 
-  constructor(private userService: UserService) {
+  constructor(private userService: UserService, private router: Router) {
+  }
+
+  public logOut() {
+    localStorage.clear();
+    this.userService.user = null;
+    this.router.navigate(['/login']);
+  }
+
+  public profile() {
+    this.userOptions = false;
   }
 }

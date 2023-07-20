@@ -35,7 +35,7 @@ export class LoginComponent {
             alert(data);
           } else {
             this.userService.user = data;
-            localStorage.setItem("userEmail", `${data.name}`);
+            localStorage.setItem("userEmail", `${data.email}`);
             localStorage.setItem("userPassword", `${data.password}`);
             this.router.navigate(['main']);
           }
