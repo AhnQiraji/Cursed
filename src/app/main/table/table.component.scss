@@ -1,0 +1,11 @@
+@import '../../../styles/vars';
+
+.taskBoard {
+  display: flex;
+  column-gap: 3 * $default-offset;
+  height: calc(100vh - 4 * $default-offset - 2 * $default-offset);
+  padding: 0 4 * $default-offset;
+  background-color: $dark-color;
+  
+  
+}

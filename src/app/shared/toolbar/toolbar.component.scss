@@ -1,0 +1,9 @@
+@import '../../../styles/vars';
+
+:host {
+  display: block;
+  height: 2 * $default-offset;
+  padding: 0.125 * $default-offset 2 * $default-offset;
+  background-color: $dark-color;
+  color: $lighter-color;
+}

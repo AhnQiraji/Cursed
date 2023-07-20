@@ -9,9 +9,10 @@ import { UserService } from 'src/app/services/user.service';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent {
-  @Input() user: User;
+  @Input() user!: User;
   
   public userOptions = false;
+  public isProfile = false;
 
   constructor(private userService: UserService, private router: Router) {
   }
@@ -24,5 +25,13 @@ export class HeaderComponent {
 
   public profile() {
     this.userOptions = false;
+    this.isProfile = true;
+  }
+
+  public test(click: Event) {
+    if((click.target as HTMLElement).closest('.crossIco')) {
+    // if((click.target as HTMLElement).className === "overlay" || (click.target as HTMLElement).closest('.crossIco')) {
+      this.isProfile = false;
+    }
   }
 }

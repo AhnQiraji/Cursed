@@ -37,4 +37,32 @@ export class HttpService{
       })
     );
   };
+
+
+  changeProfile(email: string, password: string, newName: string, newPassword: string) : Observable<string> {
+    const body = {email: email, password: password, newName: newName, newPassword: newPassword}
+
+    return this.http.post('http://localhost:3000/changeProfile/', body).pipe(
+      map((result:any) => {
+        if (result.error) {
+          return result.error;
+        }
+        return result;
+      })
+    );
+  }
+
+
+  newTask(name: string, description: string, importance: string, status: string) : Observable<string> {
+    const body = {name: name, description: description, importance: importance, status: status}
+
+    return this.http.post('http://localhost:3000/newTask/', body).pipe(
+      map((result:any) => {
+        if (result.error) {
+          return result.error;
+        }
+        return result;
+      })
+    );
+  }
 }

@@ -1,0 +1,193 @@
+@import '../../../../styles/vars';
+
+
+:host {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+  // overflow: hidden;
+
+  .overlay {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $modal-color;
+  
+    .profile {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      row-gap: 1.5 * $default-offset;
+      padding: 2 * $default-offset;
+      border-radius: $default-offset;
+      box-shadow: rgb(255 255 255 / 100%) 0 0 7px;
+      background-color: $dark-color;
+
+      * {
+        width: 100%;
+      }
+  
+      .avatarPlaceholder {
+        width: 5 * $default-offset;
+        height: 5 * $default-offset;
+        padding: 0;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: 50%;
+      }
+
+      svg.change {
+        position: absolute;
+        width: 5 * $default-offset;
+        height: 5 * $default-offset;
+        padding: 1 * $default-offset;
+        background-color: $darkest-color;
+        border-radius: 50%;
+        background-repeat: no-repeat;
+        background-position: 50%;
+        opacity: 0;
+
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+  
+      .crossIco {
+        position: absolute;
+        right: $default-offset;
+        top: $default-offset;
+        width: 1.75 * $default-offset;
+        height: 1.75 * $default-offset;
+        padding: 0.35 * $default-offset;
+        border-radius: 2 * $border-radius;
+
+        path {
+          fill: $lighter-color;
+          stroke: $lighter-color;
+        }
+
+        &:hover {
+          background-color: $darker-color;
+        }
+      }
+
+      div {
+        display: flex;
+        flex-direction: column;
+        row-gap: 0.5 * $default-offset;
+
+        span {
+          font-size: $smaller-font-size;
+          font-weight: 300;
+        }
+
+        input {
+          background-color: $dark-color;
+          box-shadow: rgb(255 255 255 / 100%) 0 0 3px;
+          margin-bottom: 0.5 * $default-offset;
+
+          &[type="password"] {
+            margin-top: $default-offset;
+          }
+        }
+      }
+
+      button {
+        margin-top: $default-offset;
+        border: none;
+        font-size: 1.25em;
+        font-weight: 500;
+        background-color: $darker-color;
+        box-shadow: rgb(255 255 255 / 100%) 0 0 3px;
+
+        &:hover {
+          box-shadow: 0 0 0 2px $lightest-color;
+        }
+      }
+    }
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  row-gap: 1 * $default-offset;
+
+  input.ng-touched.ng-invalid{
+    box-shadow: rgba($color: $bad-color, $alpha: 1) 0 0 12px !important;
+}
+}
+
+
+
+// .avatarChangeOverlay {
+//   background-color: $modal-color;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+
+//   .avatarChangeLayout {
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center; 
+//       justify-items: center;
+//       row-gap: 2 * $default-offset;
+//       padding: 2 * $default-padding;
+//       background-color: $main-bg-color;
+//       border-radius: $default-padding;
+//       box-shadow: $white-box-shadow;
+
+//       .avatarList {
+//           display: flex;
+//           flex-wrap: wrap;
+//           justify-content: center;
+//           max-width: 36 * $default-padding;
+//           gap: 2 * $default-padding;
+
+//           input {
+//               display: none;
+
+//               &:checked + label img {
+//                   outline: 5 * $border-width solid $secondary-bg-color;
+//               }
+//           }
+
+//           label {
+              
+//               img {
+//                   border-radius: 50%;
+//                   width: 7 * $default-padding;
+//                   height: 7 * $default-padding;
+//                   background-color: rgba(255, 255, 255, 0.2);
+//                   outline: 5 * $border-width solid transparent;      
+//                   transition: outline-color 0.3s;
+
+//                   &:hover {
+//                       outline: 5 * $border-width solid $secondary-bg-color;
+//                   }
+//               }
+//           }
+//       }
+
+//       button {
+//           width: 6 * $default-padding;
+//           border: none;
+//           font-size: 1.25em;
+//           font-weight: 500;
+//           background-color: $secondary-bg-color;
+//           box-shadow: $lesser-white-box-shadow;
+//           color: $light-border-color;
+
+//           &:hover {
+//               box-shadow: 0 0 0 2px $light-border-color;
+//           }
+//       }
+//   }
+// }

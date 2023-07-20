@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { taskTables } from 'src/app/entities/enums';
 
 @Component({
   selector: 'app-table',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./table.component.scss']
 })
 export class TableComponent {
-
+  tables = Object.values(taskTables).filter(string => {
+    return `${+string}` === `${string}` ? false : true;
+  });
 }

@@ -1,0 +1,282 @@
+@import '../../../../../styles/vars';
+
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: $modal-color;
+  z-index: 1;
+
+  .task {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    row-gap: $default-offset;
+    // width: 31 * $default-padding;
+    // height: 100%;
+    padding: 2 * $default-offset;
+    border-radius: $default-offset;
+    box-shadow: rgb(255 255 255 / 100%) 0 0 7px;
+    background-color: $dark-color;
+    // overflow: auto;
+    // z-index: 1;
+
+    form {
+      position: relative;
+
+      >* {
+        margin: 1 * $default-offset 0;
+      }
+      // display: flex;
+      // flex-direction: column;
+      // align-items: start;
+      // row-gap: $default-offset;
+      // overflow: auto;
+      // z-index: 1;
+    }
+
+    svg {
+      width: $svg-size;
+      height: $svg-size;
+      padding: $svg-padding;
+      border-radius: $svg-radius;
+      transition: all 0.3s linear;
+      cursor: pointer;
+  
+      path {
+          fill: $lightest-color;
+      }
+  
+      &.plusIco, &.filterIco, &.sortIco, &.crossIco {
+  
+          path {
+              stroke: $lightest-color;
+          }
+      }
+  
+      &:hover {
+          background-color: $darker-color;
+      }
+    }
+
+    select {
+      min-width: 8rem;
+      border: none;
+      outline: none;
+      box-shadow: rgb(255 255 255 / 100%) 0 0 3px;
+      border-radius: $default-offset;
+      padding: 0.25 * $default-offset 0.5 * $default-offset;
+      background-color: $dark-color;
+      cursor: pointer;
+      
+      option {
+        // color: $darker-color;
+
+        &[value=low] {
+          background-color: $good-color;
+        }
+        &[value=medium] {
+          background-color: $normal-color;
+        }
+        &[value=high] {
+          background-color: $bad-color;
+        }
+      }
+    }
+
+  }
+}
+
+.task {
+
+  input, textarea {
+    color: $lighter-color;
+  }
+
+  // .assignTo select {
+  //   border: none;
+  //   outline: none;
+  //   box-shadow: rgb(255 255 255 / 100%) 0 0 3px;
+  //   border-radius: $border-radius;
+  //   padding: 0.25 * $default-offset 0.5 * $default-offset;
+  //   background-color: $dark-color;
+  // }
+
+  .actionsBar{
+    position: absolute;
+    right: $default-offset;
+    top: $default-offset;
+    display: flex;
+    flex-direction: row;
+    width: fit-content;
+    column-gap: 0.25 * $default-offset;
+  }
+
+  form>div {
+      display: flex;
+      flex-direction: column;
+      row-gap: 0.75 * $default-offset;
+      width: 100%;
+
+      span {
+          font-weight: 300;
+          color: $lighter-color;
+
+          &.boardName {
+              padding: 0.125 * $default-offset 0.5 * $default-offset;
+              border-radius: $default-offset;
+              box-shadow: rgb(255 255 255 / 100%) 0 0 3px;
+          }
+      }
+
+      input:not([type=radio]) {
+          width: 27rem;
+          background-color: $dark-color;
+          box-shadow: rgb(255 255 255 / 100%) 0 0 3px;
+
+          &[type="password"] {
+              margin-top: $default-offset;
+          }
+      }
+
+      textarea {
+          resize: none;
+          width: 27 * $default-offset;
+          height: 8 * $default-offset;
+          background-color: $darker-color;
+          box-shadow: rgb(255 255 255 / 100%) 0 0 3px;
+          outline: none;
+          // border: none;
+      }
+
+      &.options {
+          flex-direction: row;
+          justify-content: space-between;
+          
+          div {
+              display: flex;
+              flex-direction: column;
+              justify-content: space-between;
+              row-gap: 0.5 * $default-offset;
+
+              span {
+                  text-align: center;
+              }
+
+              div {
+                  display: flex;
+                  flex-direction: row;
+                  column-gap: $default-offset;
+
+                  svg {
+                      width: 1.25 * $svg-size;
+                      height: 1.25 * $svg-size;
+                      margin-bottom: - $svg-padding;
+                  }
+              }
+          }
+      }
+  }
+
+  .buttons {
+      margin-top: $default-offset;
+      flex-direction: row !important;
+      justify-content: space-between;
+  }
+
+  button {
+    width: 8 * $default-offset;
+      border: none;
+      padding: 0.25 * $default-offset $default-offset;
+      border-radius: $default-offset;
+      background-color: $darker-color;
+      box-shadow: rgb(255 255 255 / 100%) 0 0 3px;
+      color: $lighter-color;
+
+      &:hover {
+          box-shadow: 0 0 0 2px white;
+      }
+  }
+
+  .hidden {
+    // display: none;
+  }
+
+  // .newComment {
+  //   position: fixed;
+  //   bottom: 1 * $default-offset;
+  //   z-index: 1;
+
+  //   textarea {
+  //     padding-right: 2.5 * $default-offset;
+  //   }
+
+  //     .postComment {
+  //         filter: invert(60%);
+  //         position: absolute;
+  //         right: 0.375 * $default-offset;
+  //         bottom: 0.75 * $default-offset;
+  //         width: 2 * $default-offset;
+  //         height: 2 * $default-offset;
+  //         padding: 0.5 * $default-offset;
+  //         border-radius: $svg-radius;
+  //         cursor: pointer;
+
+  //         &:hover {
+  //             background-color: rgba(249, 248, 248, 0.5);
+  //         }
+  //     }
+
+  //     >span {
+  //         position: absolute;
+  //         right: 0.375 * $default-offset;
+  //         top: 0.375 * $default-offset;
+  //         font-size: $smaller-font-size;
+  //     }
+  // }
+
+  // .placeholder {
+  //     order: 1;
+  //     height: 8rem;
+  // }
+
+  // .comment {
+  //     position: relative;
+  //     width: 27 * $default-offset;
+  //     padding: 0.5 * $default-offset $default-offset 1.5 * $default-offset 3 * $default-padding;
+  //     border-radius: $little-border-radius;
+  //     box-shadow: $lesser-white-box-shadow;
+  //     color: $light-bg-color;
+  //     font-weight: 300;
+  //     font-size: $small-font-size;
+
+  //     .avatarPlaceholder {
+  //         position: absolute;
+  //         left: 0.5 * $default-padding;
+  //         top: 0.5 * $default-padding;    
+  //         width: 2 * $default-padding;
+  //         height: 2 * $default-padding;
+  //         padding: 0;
+  //         border-radius: 50%;
+
+  //         path {
+  //             fill: $secondary-bg-color;
+  //         }
+
+  //         &:hover {
+  //             opacity: 0.5;
+  //         }
+  //     }
+
+  //     .date {
+  //         position: absolute;
+  //         right: $default-padding;
+  //         bottom: 0.25 * $default-padding;
+  //         font-size: $smaller-font-size;
+  //     }
+  // }
+}

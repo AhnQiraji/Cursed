@@ -3,6 +3,9 @@
 :host {
   
   ::ng-deep {
-    color: $lighter-color;
+
+    * {
+      color: $lighter-color;
+    }
   }
 }

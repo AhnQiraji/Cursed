@@ -1,0 +1,46 @@
+<div class="taskCreationLayout overlay">
+  <div class="task">
+    <div class="actionsBar">
+        <svg class="crossIco" viewBox="0 0 14 14">
+            <path d="M14 1.41L12.59 0L7 5.59L1.41 0L0 1.41L5.59 7L0 12.59L1.41 14L7 8.41L12.59 14L14 12.59L8.41 7L14 1.41Z"/>
+        </svg>
+    </div>
+
+    <form [formGroup]="taskForm" novalidate >
+
+      <div class="title">
+          <span>Title</span>
+          <input #name formControlName="name" type="text">
+      </div>
+      <div class="description">
+          <span>Description</span>
+          <textarea #description formControlName="description" name="" cols="30" rows="10" placeholder="Task description"></textarea>
+      </div>
+      <div class="options">
+        <div class="chooseImportance">
+          <span>Importance</span>
+          <select #importance formControlName="importance" name="">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
+        </div>
+        <div class="chooseBoard">
+          <span>Current board</span>
+          <select #status formControlName="status" name="">
+            <option value="To do">To do</option>
+            <option value="In progress">In progress</option>
+            <option value="Complete">Complete</option>
+          </select>
+        </div>
+      </div>
+      <div class="buttons">
+          <button (click)="reset()" class="reset">Reset</button>
+          <button (click)="taskCreate(name.value, description.value, importance.value, status.value)" class="create">Create</button>
+      </div>
+      
+    </form>
+
+
+  </div>
+</div>

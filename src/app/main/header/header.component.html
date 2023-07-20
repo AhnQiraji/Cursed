@@ -11,3 +11,6 @@
   <div (click)="profile()">Profile</div>
   <div (click)="logOut()">Log out</div>
 </div>
+
+
+<profile-container (click)="test($event)" [style.display]="isProfile ? 'flex' : 'none'"></profile-container>

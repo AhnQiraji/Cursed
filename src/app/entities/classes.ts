@@ -5,3 +5,16 @@ export class User {
     
   }
 }
+
+export class Task {
+
+  constructor(
+    public id: string,
+    public name: string,
+    public priority: string,
+    public description: string,
+    public status: string,
+  ) {
+    
+  }
+}

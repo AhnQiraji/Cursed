@@ -1,0 +1,188 @@
+@import '../../../../styles/vars';
+
+
+.tableHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h4 {
+        margin: 0.5 * $default-offset;
+        padding: 0 0.25 * $default-offset;
+        font-size: $h4-font-size;
+        font-weight: 500;
+        flex-grow: 1;
+        // white-space: nowrap;
+        // text-overflow: ellipsis;
+
+        // &:focus-visible {
+        //     outline: $secondary-bg-color auto $border-width !important;
+        //     outline:none;
+        // }
+    }
+
+    div {
+        display: flex;
+        column-gap: 0.5 * $default-offset;
+
+        svg {
+          width: $svg-size;
+          height: $svg-size;
+          padding: $svg-padding;
+          border-radius: $svg-radius;
+          transition: all 0.3s linear;
+          cursor: pointer;
+
+          path {
+              fill: $lightest-color;
+          }
+
+          &:not(.deleteIco, .optionsIco, .assigneeAvatar) {
+
+              path {
+                  stroke: $lightest-color;
+              }
+          }
+
+          &:hover {
+              background-color: $darker-color;
+          }
+        }
+
+        img {
+            width: 1.5 * $h4-font-size;
+            height: 1.5 * $h4-font-size;
+            padding: 0.35 * $default-offset;
+            border-radius: 2 * $border-radius;
+            transition: all 0.3s linear;
+
+            &:hover {
+                background-color: $lighter-color;
+            }
+        }
+    }
+}
+
+.taskTable {
+    position: relative;
+    height: calc(100vh - 4 * $default-offset - 2 * $default-offset - $default-offset - 2.25rem - $default-offset);
+    background-color: $darker-color;
+    border-radius: $default-offset;
+    
+    .border {
+        position: absolute;
+        width: 100%;
+        height: 2 * $default-offset;
+        flex-shrink: 0;
+
+        &.top {
+            top: 0;
+            margin-bottom: - 1 * $default-offset;
+            border-radius: $default-offset $default-offset 0 0;
+            background-image: linear-gradient(to bottom, $darker-color, transparent 100%);
+        }
+
+        &.bottom {
+            bottom: 0;
+            margin-top: - 1 * $default-offset;
+            border-radius: 0 0 $default-offset $default-offset;
+            background-image: linear-gradient(to top, $darker-color, transparent 100%);
+        }
+    }
+
+    // .tasks {
+    //     display: flex;
+    //     flex-direction: column;
+    //     justify-content: flex-start;
+    //     row-gap: $default-padding;
+    //     height: calc($body-height - $header-height - $toolbar-height - $default-padding - 2.25rem - $default-padding);
+    //     padding: $blur-width $default-padding;
+    //     overflow-y: auto;
+    //     overflow-x: hidden;
+
+    //     .innerContent {
+    //         display: flex;
+    //         flex-direction: column;
+    //         row-gap: 1rem;
+    //     }
+
+    //     .taskForm {
+    //         display: flex;
+    //         flex-direction: column;
+    //         width: 100%;
+    //         background-color: $main-bg-color;
+    //         border-radius: $default-padding;
+    //         padding: 0.5 * $default-padding $default-padding;
+    //         row-gap: 0.25 * $default-padding;
+    //         cursor: pointer;
+
+    //         &:hover {
+    //             box-shadow: $lesser-white-box-shadow;
+    //         }
+
+    //         > * {
+    //             width: 100%;
+    //         }
+
+    //         div {
+    //             display: flex;
+    //             align-items: center;
+    //         }
+
+    //         .taskStatus {
+    //             justify-content: space-between;
+    //             align-items: center;
+
+    //             .mark {
+    //                 justify-content: center;
+    //                 align-items: center;
+    //                 // width: 4 * $h4-font-size;
+    //                 height: 1.25 * $h4-font-size;
+    //                 padding: 0 0.5 * $default-padding;
+    //                 border-radius: 2 * $little-border-radius;
+    //                 color: $main-border-color;
+    //                 font-size: $small-font-size;
+    //                 text-transform: lowercase;
+                    
+    //                 &.high {
+    //                     background-color: $bad-color;
+    //                 }
+
+    //                 &.medium {
+    //                     background-color: $normal-color;
+    //                 }
+
+    //                 &.low {
+    //                     background-color: $good-color;
+    //                 }
+    //             }
+
+    //             img {
+    //                 width: 1.5 * $h4-font-size;
+    //                 height: 1.5 * $h4-font-size;
+    //                 padding: 0.35 * $default-padding;
+    //                 border-radius: 2 * $little-border-radius;
+    //                 transition: all 0.3s linear;
+        
+    //                 &:hover {
+    //                     background-color: $light-bg-color
+    //                 }
+    //             }
+    //         }
+
+    //         .taskAssignee {
+    //             justify-content: flex-end;
+
+    //             .assignee {
+
+    //                 svg {
+    //                     width: 1.25 * $svg-size;
+    //                     height: 1.25 * $svg-size;
+    //                     margin-left: 0.25 * $default-padding;
+    //                     border-radius: 50%;
+    //                 }
+    //             }
+    //         }
+    //     }
+    // }
+}
